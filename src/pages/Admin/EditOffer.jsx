@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "../../supabase/client";
-import AdminLayout from "../../layouts/AdminLayout";
 import OfferForm from "./OfferForm";
-
 import Loader from "../../components/Loader";
 import { Box, Heading } from "@chakra-ui/react";
 
@@ -28,14 +26,12 @@ export default function EditOffer() {
   }, [id]);
 
   return (
-    <AdminLayout>
-      <Box>
-        <Heading fontSize="lg" color="gray.700" mb={4}>
-          Editar oferta
-        </Heading>
+    <Box>
+      <Heading fontSize="lg" color="gray.700" mb={4}>
+        Editar oferta
+      </Heading>
 
-        {loading ? <Loader /> : <OfferForm offer={offer} />}
-      </Box>
-    </AdminLayout>
+      {loading ? <Loader /> : <OfferForm offer={offer} />}
+    </Box>
   );
 }

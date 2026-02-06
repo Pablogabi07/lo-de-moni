@@ -1,4 +1,3 @@
-import AdminLayout from "../../layouts/AdminLayout";
 import ProductForm from "../../components/Admin/ProductForm";
 import { Box, Heading } from "@chakra-ui/react";
 
@@ -9,19 +8,17 @@ export default function NewProduct() {
   };
 
   return (
-    <AdminLayout>
-      <Box>
-        <Heading
-          fontSize="lg"
-          color="gray.700"
-          mb={4}
-          fontWeight="semibold"
-        >
-          Nuevo producto
-        </Heading>
+    <Box>
+      <Heading
+        fontSize="lg"
+        color="gray.700"
+        mb={4}
+        fontWeight="semibold"
+      >
+        Nuevo producto
+      </Heading>
 
-        <ProductForm product={null} onSaved={handleSaved} />
-      </Box>
-    </AdminLayout>
+      <ProductForm product={null} onSaved={handleSaved} />
+    </Box>
   );
 }

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "../../supabase/client";
-import AdminLayout from "../../layouts/AdminLayout";
 import ProductForm from "../../components/Admin/ProductForm";
 import Loader from "../../components/Loader";
 import { Box, Heading } from "@chakra-ui/react";
@@ -61,23 +60,16 @@ export default function EditProduct() {
   };
 
   return (
-    <AdminLayout>
-      <Box>
-        <Heading
-          fontSize="lg"
-          color="gray.700"
-          mb={4}
-          fontWeight="semibold"
-        >
-          {id ? "Editar producto" : "Nuevo producto"}
-        </Heading>
+    <Box>
+      <Heading fontSize="lg" color="gray.700" mb={4} fontWeight="semibold">
+        {id ? "Editar producto" : "Nuevo producto"}
+      </Heading>
 
-        {loading ? (
-          <Loader />
-        ) : (
-          <ProductForm product={product} onSaved={handleSaved} />
-        )}
-      </Box>
-    </AdminLayout>
+      {loading ? (
+        <Loader />
+      ) : (
+        <ProductForm product={product} onSaved={handleSaved} />
+      )}
+    </Box>
   );
 }
