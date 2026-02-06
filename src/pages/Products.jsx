@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../supabase/client";
 
+
 import ProductCard from "../components/ProductCard";
 import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 
