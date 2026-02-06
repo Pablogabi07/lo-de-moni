@@ -21,6 +21,17 @@ export default function Contact() {
       return;
     }
 
+    const phone = "5491161910448"; // Número de Moni
+
+    const text = `Hola Moni! Te escribo desde la web.%0A%0A` +
+                 `Nombre: ${name}%0A` +
+                 `Email: ${email}%0A` +
+                 `Mensaje:%0A${msg}`;
+
+    const url = `https://wa.me/${phone}?text=${text}`;
+
+    window.open(url, "_blank");
+
     setSent(true);
     setName("");
     setEmail("");
@@ -69,18 +80,18 @@ export default function Contact() {
           onClick={handleSend}
           _hover={{ bg: "secondary" }}
         >
-          Enviar
+          Enviar por WhatsApp
         </Button>
 
         {sent && (
           <Text fontSize="sm" color="green.600">
-            ¡Mensaje enviado! Moni te va a responder pronto.
+            ¡Mensaje enviado por WhatsApp!
           </Text>
         )}
       </VStack>
 
       <Text fontSize="sm" color="gray.500" mt={4}>
-        También podés coordinar por WhatsApp o redes sociales.
+        También podés escribir directamente al WhatsApp de Moni.
       </Text>
     </Box>
   );
