@@ -15,7 +15,7 @@ import {
 import { useCart } from "../context/CartContext";
 
 export default function CartDrawer({ isOpen, onClose }) {
-  const { items, removeOne, removeFromCart, total, sendToWhatsApp } = useCart();
+  const { items, addToCart, removeOne, removeFromCart, total, sendToWhatsApp } = useCart();
 
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="sm">
@@ -34,18 +34,42 @@ export default function CartDrawer({ isOpen, onClose }) {
                   objectFit="cover"
                   rounded="md"
                 />
-                <VStack align="start" spacing={0}>
+
+                <VStack align="start" spacing={0} flex="1">
                   <Text fontWeight="bold">{item.title}</Text>
                   <Text>${item.price}</Text>
-                  <Text fontSize="sm">Cantidad: {item.quantity}</Text>
-                </VStack>
 
-                <Button size="xs" colorScheme="red" onClick={() => removeOne(item.id)}>
-                  -
-                </Button>
-                <Button size="xs" colorScheme="red" onClick={() => removeFromCart(item.id)}>
-                  x
-                </Button>
+                  <HStack spacing={2}>
+                    {/* RESTAR */}
+                    <Button
+                      size="xs"
+                      bg="gray.200"
+                      onClick={() => removeOne(item.id)}
+                    >
+                      -
+                    </Button>
+
+                    <Text>{item.quantity}</Text>
+
+                    {/* SUMAR */}
+                    <Button
+                      size="xs"
+                      bg="gray.200"
+                      onClick={() => addToCart(item)}
+                    >
+                      +
+                    </Button>
+
+                    {/* ELIMINAR */}
+                    <Button
+                      size="xs"
+                      colorScheme="red"
+                      onClick={() => removeFromCart(item.id)}
+                    >
+                      x
+                    </Button>
+                  </HStack>
+                </VStack>
               </HStack>
             ))}
 
