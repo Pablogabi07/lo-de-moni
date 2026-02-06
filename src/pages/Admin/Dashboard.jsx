@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../supabase/client";
-import AdminLayout from "../../layouts/AdminLayout";
 import ProductFilters from "../../components/Admin/ProductFilters";
 import ProductTable from "../../components/Admin/ProductTable";
 import Loader from "../../components/Loader";
@@ -81,43 +80,37 @@ export default function Dashboard() {
   };
 
   if (loading) {
-    return (
-      <AdminLayout>
-        <Loader />
-      </AdminLayout>
-    );
+    return <Loader />;
   }
 
   return (
-    <AdminLayout>
-      <Box>
-        <Flex justify="space-between" align="center" mb={4}>
-          <Heading fontSize="lg" color="gray.700">
-            Productos ({filtered.length})
-          </Heading>
+    <Box>
+      <Flex justify="space-between" align="center" mb={4}>
+        <Heading fontSize="lg" color="gray.700">
+          Productos ({filtered.length})
+        </Heading>
 
-          <Button
-            as={Link}
-            to="/admin/new"
-            bg="primary"
-            color="light"
-            size="sm"
-            _hover={{ bg: "secondary" }}
-          >
-            Nuevo producto
-          </Button>
-        </Flex>
+        <Button
+          as={Link}
+          to="/admin/new"
+          bg="primary"
+          color="light"
+          size="sm"
+          _hover={{ bg: "secondary" }}
+        >
+          Nuevo producto
+        </Button>
+      </Flex>
 
-        <ProductFilters
-          category={category}
-          setCategory={setCategory}
-          search={search}
-          setSearch={setSearch}
-          categories={categories}
-        />
+      <ProductFilters
+        category={category}
+        setCategory={setCategory}
+        search={search}
+        setSearch={setSearch}
+        categories={categories}
+      />
 
-        <ProductTable products={filtered} onDelete={handleDelete} />
-      </Box>
-    </AdminLayout>
+      <ProductTable products={filtered} onDelete={handleDelete} />
+    </Box>
   );
 }
