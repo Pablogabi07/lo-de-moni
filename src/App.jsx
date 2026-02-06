@@ -35,14 +35,14 @@ export default function App() {
         </Route>
 
         {/* RUTAS ADMIN */}
-        <Route element={<AdminLayout />}>
-          <Route path="/admin" element={<Login />} />
-          <Route path="/admin/dashboard" element={<Dashboard />} />
-          <Route path="/admin/new" element={<NewProduct />} />
-          <Route path="/admin/edit/:id" element={<EditProduct />} />
-          <Route path="/admin/offers" element={<OffersDashboard />} />
-          <Route path="/admin/offers/new" element={<NewOffer />} />
-          <Route path="/admin/offers/edit/:id" element={<EditOffer />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Login />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="new" element={<NewProduct />} />
+          <Route path="edit/:id" element={<EditProduct />} />
+          <Route path="offers" element={<OffersDashboard />} />
+          <Route path="offers/new" element={<NewOffer />} />
+          <Route path="offers/edit/:id" element={<EditOffer />} />
         </Route>
 
       </Routes>
