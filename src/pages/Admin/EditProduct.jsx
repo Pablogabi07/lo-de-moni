@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "../../supabase/client";
-import AdminLayout from "../../layout/AdminLayout";
+import AdminLayout from "../../layouts/AdminLayout";
 import ProductForm from "../../components/Admin/ProductForm";
 import Loader from "../../components/Loader";
 import { Box, Heading } from "@chakra-ui/react";

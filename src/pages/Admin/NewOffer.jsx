@@ -1,4 +1,4 @@
-import AdminLayout from "../../layout/AdminLayout";
+import AdminLayout from "../../layouts/AdminLayout";
 import OfferForm from "./OfferForm";
 
 import { Box, Heading } from "@chakra-ui/react";

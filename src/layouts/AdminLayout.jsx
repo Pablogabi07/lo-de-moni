@@ -12,10 +12,10 @@ import {
   DrawerCloseButton,
   DrawerBody,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
-export default function AdminLayout({ children }) {
+export default function AdminLayout() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -97,10 +97,9 @@ export default function AdminLayout({ children }) {
 
         {/* CONTENIDO SCROLLABLE */}
         <Box p={6} flex="1" overflowY="auto">
-          {children}
+          <Outlet />
         </Box>
       </Flex>
     </Flex>
   );
 }
-

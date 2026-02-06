@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "../../supabase/client";
-import AdminLayout from "../../layout/AdminLayout";
+import AdminLayout from "../../layouts/AdminLayout";
 import OfferForm from "./OfferForm";
 
 import Loader from "../../components/Loader";

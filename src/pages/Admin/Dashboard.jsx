@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../supabase/client";
-import AdminLayout from "../../layout/AdminLayout";
+import AdminLayout from "../../layouts/AdminLayout";
 import ProductFilters from "../../components/Admin/ProductFilters";
 import ProductTable from "../../components/Admin/ProductTable";
 import Loader from "../../components/Loader";

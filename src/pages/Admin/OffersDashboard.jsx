@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../supabase/client";
-import AdminLayout from "../../layout/AdminLayout";
+import AdminLayout from "../../layouts/AdminLayout";
 import OfferTable from "../../pages/Admin/OfferTable";
 import Loader from "../../components/Loader";
 import { Link } from "react-router-dom";
