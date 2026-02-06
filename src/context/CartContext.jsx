@@ -64,7 +64,7 @@ export function CartProvider({ children }) {
   );
 
   const sendToWhatsApp = () => {
-    const phone = "5491122334455";
+    const phone = "5491161910448";
 
     const message = items
       .map(

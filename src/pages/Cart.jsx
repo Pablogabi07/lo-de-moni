@@ -54,6 +54,7 @@ export default function Cart() {
               </Box>
 
               <HStack spacing={3}>
+                {/* RESTAR */}
                 <Button
                   size="xs"
                   bg="gray.200"
@@ -64,6 +65,7 @@ export default function Cart() {
 
                 <Text>{item.quantity}</Text>
 
+                {/* SUMAR */}
                 <Button
                   size="xs"
                   bg="gray.200"
@@ -72,6 +74,7 @@ export default function Cart() {
                   +
                 </Button>
 
+                {/* ELIMINAR */}
                 <Button
                   size="xs"
                   variant="link"

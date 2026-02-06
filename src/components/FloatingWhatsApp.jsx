@@ -1,7 +1,7 @@
 import { Link as ChakraLink, Text } from "@chakra-ui/react";
 
 export default function FloatingWhatsApp() {
-  const phone = "5491122334455"; // Cambiar por el de Moni
+  const phone = "5491161910448"; // Cambiar por el de Moni
 
   return (
     <ChakraLink
