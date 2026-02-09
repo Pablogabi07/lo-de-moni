@@ -18,6 +18,9 @@ export default function Footer() {
         <Text fontSize="sm" color="secondary">
           Pablo Design Lab
         </Text>
+        <p className="footer-credit">
+  Diseñado por <a href="https://pablodesignlab-qkg6.vercel.app/" target="_blank">Pablo Design Lab</a>
+</p>
       </VStack>
     </Box>
   );
