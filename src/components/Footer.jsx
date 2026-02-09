@@ -1,4 +1,4 @@
-import { Box, Text, VStack } from "@chakra-ui/react";
+import { Box, Text, VStack, Link as ChakraLink } from "@chakra-ui/react";
 
 export default function Footer() {
   return (
@@ -18,9 +18,19 @@ export default function Footer() {
         <Text fontSize="sm" color="secondary">
           Pablo Design Lab
         </Text>
-        <p className="footer-credit">
-  Diseñado por <a href="https://pablodesignlab-qkg6.vercel.app/" target="_blank">Pablo Design Lab</a>
-</p>
+
+        <Text fontSize="sm" color="light">
+          Diseñado por{" "}
+          <ChakraLink
+            href="https://pablodesignlab-qkg6.vercel.app/"
+            target="_blank"
+            color="secondary"
+            fontWeight="semibold"
+            _hover={{ textDecoration: "underline" }}
+          >
+            Pablo Design Lab
+          </ChakraLink>
+        </Text>
       </VStack>
     </Box>
   );
