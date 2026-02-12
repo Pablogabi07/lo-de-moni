@@ -10,6 +10,7 @@ import {
   Badge,
   Button,
   Image,
+  Text,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
@@ -17,7 +18,7 @@ import { useCart } from "../context/CartContext";
 import CartDrawer from "./CartDrawer";
 
 // IMPORTAMOS EL LOGO DESDE ASSETS
-import logo from "../assets/logosinfondo.png";
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const {
@@ -48,14 +49,30 @@ export default function Navbar() {
     >
       <Flex maxW="6xl" mx="auto" justify="space-between" align="center">
 
-        {/* LOGO */}
-        <ChakraLink as={Link} to="/" _hover={{ opacity: 0.8 }}>
+        {/* LOGO + TEXTO */}
+        <ChakraLink
+          as={Link}
+          to="/"
+          _hover={{ opacity: 0.85 }}
+          display="flex"
+          alignItems="center"
+          gap={3}
+        >
           <Image
             src={logo}
             alt="Lo de Moni"
-            h={{ base: "36px", md: "48px" }}
+            h={{ base: "32px", md: "48px" }}
+            w="auto"
             objectFit="contain"
           />
+
+          <Text
+            fontSize={{ base: "lg", md: "2xl" }}
+            fontWeight="bold"
+            display={{ base: "none", sm: "block" }} 
+          >
+            Lo de Moni
+          </Text>
         </ChakraLink>
 
         {/* LINKS DESKTOP */}
