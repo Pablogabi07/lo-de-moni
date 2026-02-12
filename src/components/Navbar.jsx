@@ -2,7 +2,6 @@ import {
   Box,
   Flex,
   HStack,
-  Text,
   Link as ChakraLink,
   IconButton,
   Collapse,
@@ -10,21 +9,23 @@ import {
   useDisclosure,
   Badge,
   Button,
+  Image,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { useCart } from "../context/CartContext";
 import CartDrawer from "./CartDrawer";
 
+// IMPORTAMOS EL LOGO DESDE ASSETS
+import logo from "../assets/logosinfondo.png";
+
 export default function Navbar() {
-  // Estado del menú móvil
   const {
     isOpen: isMenuOpen,
     onToggle: toggleMenu,
     onClose: closeMenu,
   } = useDisclosure();
 
-  // Estado del Drawer del carrito
   const {
     isOpen: isCartOpen,
     onOpen: openCart,
@@ -46,9 +47,16 @@ export default function Navbar() {
       zIndex={100}
     >
       <Flex maxW="6xl" mx="auto" justify="space-between" align="center">
-        <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold">
-          Lo de Moni
-        </Text>
+
+        {/* LOGO */}
+        <ChakraLink as={Link} to="/" _hover={{ opacity: 0.8 }}>
+          <Image
+            src={logo}
+            alt="Lo de Moni"
+            h={{ base: "36px", md: "48px" }}
+            objectFit="contain"
+          />
+        </ChakraLink>
 
         {/* LINKS DESKTOP */}
         <HStack
